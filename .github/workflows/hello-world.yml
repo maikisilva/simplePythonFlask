@@ -1,0 +1,16 @@
+name: 'Hello World'
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  ci-cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: docker-build
+        run: docker build -t teste .
+
